@@ -1,10 +1,10 @@
 <?php
 require ('src/functions.php');
 
-echo 'Задание 1';
-//task1('data.xml');
+echo 'Задание 1 <br>';
+task1('data.xml');
 
-echo '<br><br><br> Задание 2';
+echo '<br><br><br> Задание 2 <br>';
 $arrayTask2 = [
     'allusers' => [
         'premiumUsers' => [
@@ -25,11 +25,11 @@ $arrayTask2 = [
 ];
 task2($arrayTask2);
 
-echo '<br><br><br> Задание 3';
-//task3('data.csv');
+echo '<br><br><br> Задание 3 <br>';
+task3('data.csv');
 
-echo '<br><br><br> Задание 4';
-//task4();
+echo '<br><br><br> Задание 4 <br>';
+task4();
 
 
 

@@ -47,21 +47,21 @@ function task2($arrayTask)
     $data = json_decode($json, true);
 
 //Решаем надо ли изменять файл или нет, записываем данные в новый файл
-    $changejson = rand(0,1);
-    if($changejson){
+    $change = rand(0,1);
+    if($change){
         $data[] = rand(0, 100);
         $data['newvalue'] = 'random-value';
     }
     file_put_contents($file2, json_encode($data, JSON_PRETTY_PRINT));
 
 // Получаем данные из файлов (не уверен что нужно было каждый раз из файла доставать файлы, но как понял так надо по заданию)
-    $json = file_get_contents('output.json');
-    $json2 = file_get_contents('output2.json');
+    $json = file_get_contents($file);
+    $json2 = file_get_contents($file2);
     $data = json_decode($json, true);
     $data2 = json_decode($json2, true);
 
     if($data == $data2){
-        echo 'Files are equal';
+        echo 'Различия в файлах нет<br>';
     } else {
         $result = array_diff_assoc($data2, $data);
         echo 'Отличие от исходного файла в следующих значениях <br>';
